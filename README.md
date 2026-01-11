@@ -13,7 +13,7 @@ export default {
     }
   }
 
-create static dir if neede:
+create static dir if needed:
 create: input.css file.  
 enter:
 @import "tailwindcss";
@@ -36,3 +36,5 @@ fill package.json file with:
   }
 
 npm run watch
+
+success
