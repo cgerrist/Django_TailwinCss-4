@@ -1,0 +1,87 @@
+git op de root en niet in venv
+
+git init
+git add .
+git commit -m "Initial commit"
+git checkout -b "Initial commit"
+git status
+git log
+git rm --cached -r .
+
+docker buil.
+docker-compose up
+docker-compse down
+docker build .
+docker logs
+docker inspect
+docker ps
+docker images
+
+source .venv/bin/activate
+python manage.py runserver
+python manage.py startapp blog
+django-admin startproject gerrist . 
+
+deactivate
+
+pip install Djange (D)
+django-admin startproject TailWind-Django  . (or directtory)
+
+
+
+
+
+settings.py
+['*']
+
+Docker Instructions
+Dockerfile Instruction	Explanation
+FROM	We use “FROM” to specify the base image we want to start from.
+RUN	RUN is used to run commands during the image build process.
+ENV	Sets environment variables within the image, making them accessible both during the build process and while the container is running. If you only need to define build-time variables, you should utilize the ARG instruction.
+COPY	The COPY command is used to copy a file or folder from the host system into the docker image.
+EXPOSE	Used to specify the port you want the docker image to listen to at runtime.
+ADD	    An advanced form of COPY instruction. You can copy files from the host system into the docker image. You can also use it to copy files from a URL into a destination in the docker image. In fact, you can use it to copy a tarball from the host system and automatically have it extracted into a destination in the docker image.
+WORKDIR	It’s used to set the current working directory.
+VOLUME	It is used to create or mount the volume to the Docker container
+USER	Sets the user name and UID when running the container. You can use this instruction to set a non-root user of the container.
+LABEL	Specify metadata information of Docker image
+ARG	    Defines build-time variables using key-value pairs. However, these ARG variables will not be accessible when the container is running. To maintain a variable within a running container, use  ENV instruction instead.
+CMD	    Executes a command within a running container. Only one CMD instruction is allowed, and if multiple are present, only the last one takes effect.
+ENTRYPOINT	Specifies the commands that will execute when the Docker container starts. If you don’t specify any ENTRYPOINT, it defaults to “/bin/sh -c”.
+
+Installing TealWindCss 4 Tailwind CLI
+install npminstall nodejs
+
+npm install tailwindcss @tailwindcss/postcss postcss postcss-cli
+
+create in root: postcss.config.js
+fill with:
+export default {
+    plugins: {
+      "@tailwindcss/postcss": {},
+    }
+  }
+
+create static dir if neede:
+create: input.css file.  
+fill with:
+@import "tailwindcss";
+@source "../node_modules/@my-company/ui-lib";
+
+create: tailwind file.
+fill package.json with:
+{ "type":"module",
+    "scripts": {
+      "build": "postcss static/input.css --o static/tailwind.css",
+      "watch": "postcss static/input.css --o static/tailwind.css --watch"
+    },
+    "dependencies": {
+      "@tailwindcss/postcss": "^4.1.18",
+      "postcss": "^8.5.6",
+      "postcss-cli": "^11.0.1",
+      "tailwindcss": "^4.1.18"
+    }
+  }
+
+npm run watch
